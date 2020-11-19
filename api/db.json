@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": 2,
-      "title": "Post Two",
-      "body": "This is post Two"
+      "title": "Post 2",
+      "body": "This is post 2",
+      "id": 2
     },
     {
       "id": 3,
@@ -14,11 +14,6 @@
       "title": "Post Four",
       "body": "This is post Four.",
       "id": 4
-    },
-    {
-      "title": "Recommendations text sections",
-      "body": "wertyugfz",
-      "id": 5
     }
   ]
 }
