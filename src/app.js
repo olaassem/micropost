@@ -9,6 +9,9 @@ document.querySelector('.post-submit').addEventListener('click', submitPost);
 //delete post event
 document.querySelector('#posts').addEventListener('click', deletePost);
 
+//edit state event
+document.querySelector('#posts').addEventListener('click', enableEdit);
+
 //get posts
 function getPosts() {
   http.get('http://localhost:3000/posts')
@@ -36,6 +39,7 @@ function submitPost() {
     .catch(err => console.log(err));
 }
 
+//delete post
 function deletePost(e) {
  e.preventDefault();
  
@@ -48,4 +52,24 @@ function deletePost(e) {
     })
     .catch(err => console.log(err));
   }
+}
+
+//enable edit state
+function enableEdit(e) {
+  e.preventDefault();
+
+  if (e.target.parentElement.classList.contains('edit')) {
+    const id = e.target.parentElement.dataset.id;
+    const body = e.target.parentElement.previousElementSibling.textContent;
+    const title = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+
+    const data = {
+      id,
+      title,
+      body
+    }
+
+    //fill form with current post
+    ui.fillForm(data);
+ }
 }
